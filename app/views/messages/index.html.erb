@@ -1,8 +1,9 @@
 <% @messages.each do |message| %>
   <div class="col-md-10 col-md-offset-1">
     <div class="message">
-    <h2 class="message-title"><%= message.title %></h2>
-      <%= link_to "Join conversation", message, class: "btn-custom" %>
+    <h2 class="message-title">
+      <%= link_to  message.title, message, class: "btn-custom" %>
+    </h2>
     </div>
   </div>
 <% end %>

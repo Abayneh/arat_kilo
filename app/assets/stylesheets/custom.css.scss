@@ -1,15 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  background-color: #e6e6e6;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato';
+  font-weight: 200;
 }
 
 /*Navbar color*/
-.navbar-green {
+.navbar-default {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
   background-color: #5cb85c;
+  
+  .navbar-nav > li > a {
+    color: white;
+  }
+  
+  .navbar-link {
+    color: #222;
+  }
 }
+
+/* Links styles */ 
+
+.links {
+  margin-top: 20px;
+  .btn-default {
+    color: #ec6767;
+  }
+}
+
+/* Message styles*/
+
+.message {
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 2em 1em;
+  color: #000;
+  height: 40px;
+
+  
+  .message-title {
+    font-size: 1.2em;
+    font-family: 'Asap', sans-serif;
+    font-weight: 200;
+    margin-top: 0;
+    color: #009933;
+    margin-bottom: 15px;
+  }
+  
+  .btn-custom {
+    margin-top: 12px;
+  }
+}
+  
+.message:nth-child(4n) {
+    clear: left;
+  }
+    
+  /* show message */
+  
+.message-show {
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 0px;
+  padding: 1.4em 1.4em;
+  color: #000;
+  border-bottom: 2px solid #5cb85c;
+  font-family: 'Asap', sans-serif;
+  font-weight: 300;
+  
+  h2 {
+    margin-top: 10px;
+  }    
+    
+  .message-desc {
+    font-size: 1.1em;
+    line-height: 1.75;
+    margin-bottom: 25px;
+  }
+  
+  .message-posted-by {
+    color: #999999;
+    font-size: 0.8em;
+  }
+  
+  .reply-to-msg {
+    margin-top: 25px;
+  }
+}
+
+.comment {
+  border-bottom: 1px solid  #e2e2d0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  
+  .comment-content {
+    font-size: 1.1em;
+  }
+  
+  .comment-posted-by {
+    color: #999999;
+    font-size: 0.8em;
+  }
+}
+
 .style_image {
   border: 4px dotted #fff;
   float :left;
@@ -60,4 +167,27 @@ body {
     text-align: left;
  }
 
+/*Confirmation */
+
+.cd-popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+ 
+.cd-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+ 
+.cd-popup-container {
+  transform: translateY(-40px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+ 
+.is-visible .cd-popup-container {
+  transform: translateY(0);
+}
 
