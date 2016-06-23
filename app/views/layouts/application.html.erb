@@ -5,34 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+      
 </head>
 <body>
-  <nav class="navbar navbar-default">
+    <%= render 'layouts/header' %>
     <div class="container">
-      <div class="navbar-header">
-        <%= link_to "Arat Kilo Fun Forum", root_path, class: "navbar-brand"%>
-      </div>
-      
-        <ul class="navbar-nav nav navbar-right">
-          <% if user_signed_in? %>
-            <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
-          <% else %>
-            <li><%= link_to "Log In", new_user_session_path %></li>
-            <li><%= link_to "Sign Up", new_user_registration_path %> </li>
-          <% end %>
-        </ul>
-        
-      <% if user_signed_in? %>
-        <p> <%= link_to "New Post", new_message_path, class: "navbar-text navbar-link" %>
-        <% end %>
+      <%= render 'layouts/message' %>
+      <%= yield %>
     </div>
-  </nav>
-  
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-<div class="container"></div>
-  <%= yield %>
-</div>
-
 </body>
 </html>
