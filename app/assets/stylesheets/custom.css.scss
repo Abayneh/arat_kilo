@@ -22,9 +22,14 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-nav > li > a {
     color: white;
   }
-  
+
   .navbar-link {
-    color: #222;
+    color: white;
+  }
+  
+  .navbar-header {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -80,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   border-bottom: 2px solid #5cb85c;
   font-family: 'Asap', sans-serif;
-  font-weight: 300;
+  font-weight: 220;
   
   h2 {
     margin-top: 10px;
@@ -166,28 +171,3 @@ h1, h2, h3, h4, h5, h6 {
     color: #468847;
     text-align: left;
  }
-
-/*Confirmation */
-
-.cd-popup {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s 0s, visibility 0s 0.3s;
-}
- 
-.cd-popup.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s 0s, visibility 0s 0s;
-}
- 
-.cd-popup-container {
-  transform: translateY(-40px);
-  transition-property: transform;
-  transition-duration: 0.3s;
-}
- 
-.is-visible .cd-popup-container {
-  transform: translateY(0);
-}
-
