@@ -1,0 +1,9 @@
+<% @shops.each do |shop| %>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="message">
+    <h2 class="message-title">
+      <%= link_to  shop.name, shop, class: "btn-custom" %>
+    </h2>
+    </div>
+  </div>
+<% end %>

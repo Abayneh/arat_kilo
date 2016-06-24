@@ -87,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Asap', sans-serif;
   font-weight: 220;
   
+  
   h2 {
     margin-top: 10px;
   }    
@@ -108,9 +109,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .comment {
-  border-bottom: 1px solid  #e2e2d0;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  border-top: 1px solid  #e2e2d0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  .comment-content {
+    font-size: 1.1em;
+  }
+  
+  .comment-posted-by {
+    color: #999999;
+    font-size: 0.8em;
+  }
+}
+
+
+.shop-show {
+  font-weight: bold;
+  border-top: 1px solid  #e2e2d0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   
   .comment-content {
     font-size: 1.1em;
