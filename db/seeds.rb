@@ -31,3 +31,19 @@ Shop.create!(name: "Arat killo shop",
                user_id: user_id)
   end
 
+
+10.times do |n|
+    name= "Samsung Galaxy S7M-#{n+500}"
+    category = "Electronics"
+    price = 10000+n*100
+    discount = false
+    soldout = false
+    shop_id = 5
+    
+  Item.create!(name: name,
+               category: category,
+               price: price,
+               discount: discount,
+               soldout: soldout,
+               shop_id: shop_id)
+end

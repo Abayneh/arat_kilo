@@ -1,15 +1,15 @@
-<% @shops.each do |shop| %>
-  <% if current_user.id == shop.user_id %>
-    <div class="col-md-8 col-md-offset-2">
-      <div class="message-show">
-        <h2><%= shop.name %></h2>
-        <p class="message-posted-by"><%= time_ago_in_words(shop.created_at) %> ago </p>
-        <p class="message-desc"><%= shop.description %></p>
-        <p class="shop-show">Address: <%= shop.address %></p>
-        <%= link_to "Edit", edit_shop_path(shop), class: "btn btn-primary" %>
-        <%= link_to "Delete", shop_path(shop), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-      </div>
-    </div>
-  <% end %> 
-<% end %>
-
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+    <h2><%= @shop.name %></h2>
+    <p class="message-posted-by"><%= time_ago_in_words(@shop.created_at) %> ago by <%= current_user.email %></p>
+    <p class="message-desc"><%= @shop.description %></p>
+    <p class="shop-show">Address: <%= @shop.address %></p>
+    <%= link_to "Back", root_path, class: "btn btn-default" %>
+    <% if current_user.id == @shop.user_id %>
+      <%= link_to "Edit", edit_shop_path(@shop), class: "btn btn-primary" %>
+      <%= link_to "Delete", shop_path(@shop), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <%= link_to "Add Item", new_shop_item_path(@shop), class: "btn btn-default"%>
+    <% end %>
+    <%= link_to "Items", shop_items_path(@shop), class: "btn btn-default"%>
+  </div>
+</div>

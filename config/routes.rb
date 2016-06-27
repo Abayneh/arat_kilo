@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :messages do
     resources :comments
   end
-  resources :shops
+  resources :shops do
+    resources :items
+  end
+  
+  get  '/static_pages/myshop'
   root 'shops#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

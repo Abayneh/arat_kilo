@@ -1,18 +1,16 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_shop, only: [:edit, :update, :destroy]
+  before_action :find_shop, only: [:show, :edit, :update, :destroy]
+  before_action :find_shops, only: [:index]
   
   def index
-    # list all shops
-    @shops = Shop.all.order("created_at DESC")
   end
   
   def show
-    @shops = Shop.all.order("created_at DESC")
   end
-  
+
   def new
-    @shop = current_user.shops.build #Amazing!
+    @shop = current_user.shops.build
   end
   
   def create 
@@ -41,6 +39,7 @@ class ShopsController < ApplicationController
     redirect_to root_path
   end
   
+  
   private 
     def shop_params
       params.require(:shop).permit(:name, :description, :address)
@@ -50,5 +49,8 @@ class ShopsController < ApplicationController
       @shop = Shop.find(params[:id])
     end
     
+    def find_shops
+      @shops = Shop.all.order("created_at DESC")
+    end
   
 end
