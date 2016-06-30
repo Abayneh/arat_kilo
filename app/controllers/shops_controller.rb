@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_shop, only: [:index, :show, :edit, :update, :destroy]
+  before_action :find_shop, only: [:show, :edit, :update, :destroy]
   before_action :find_shops, only: [:index]
 
   # before_action :find_user, only: [:index]
