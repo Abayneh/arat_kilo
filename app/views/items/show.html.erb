@@ -1,18 +1,25 @@
 <div class="col-md-8 col-md-offset-2">
   <div class="message-show">
     <h2><%= @item.name %></h2>
+  </div>
+</div>
 
-      <p class="message-desc">Category: <%= @item.category %></p>
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+      <p class="message-desc">Category: <%= @category.name %></p>
       <p class="message-desc">Price: <%= @item.price %></p>
       <p class="message-desc">Discount:<%= human_boolean(@item.discount) %></p>
       <p class="message-desc">Sold out: <%= human_boolean(@item.soldout) %></p>
       <p class="message-posted-by"><%= time_ago_in_words(@item.created_at) %> ago by <%= @shop.name %></p>
-      <%= link_to "Back", shop_items_path, class: "btn btn-default" %>
-      <% if current_user.id == @shop.user_id %>
-        <%= link_to "Edit", edit_shop_item_path(@shop.id, @item.id), class: "btn btn-primary" %>
-        <%= link_to "Delete", shop_item_path(@shop.id, @item.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        <%= link_to "Add Item", new_shop_item_path(@item), class: "btn btn-default"%>
-      <% end %>
-
   </div>
 </div>
+<% if current_user.id == @shop.user_id %>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="message-show">
+      <%= link_to "Edit", edit_shop_item_path(@shop.id, @item.id), class: "btn btn-primary" %>
+      <%= link_to "Delete", shop_item_path(@shop.id, @item.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      <%= link_to "Add Item", new_shop_item_path(@item), class: "btn btn-default"%>
+      <%= link_to "Back", shop_items_path, class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

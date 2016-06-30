@@ -189,3 +189,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #468847;
     text-align: left;
  }
+ 
+ table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+
+}

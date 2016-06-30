@@ -1,12 +1,20 @@
-<h1>Items here</h1>
-<% @items.each do |item| %>
-  <% if item.shop_id == @shop.id %>
-    <div class="col-md-10 col-md-offset-1">
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+    <h2><%= pluralize(@myitems.count, "item") %> found</h2>
+  </div>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+  <% @myitems.each do |item| %>
+    <% if item.shop_id == @shop.id %>
       <div class="message">
       <h2 class="message-title">
         <%= link_to  item.name, shop_item_path(@shop, item.id), class: "btn-custom" %>
       </h2>
       </div>
     <% end %>
-    </div>
-<% end %>
+  <% end %>
+</div>
+<div class="col-md-8 col-md-offset-2">
+  <%= link_to  "Add item", new_shop_item_path(@shop), class: "btn btn-default" %>
+</div>

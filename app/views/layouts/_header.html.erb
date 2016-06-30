@@ -8,14 +8,17 @@
         <span class="icon-bar"></span>
       </button>
       <!image_tag("4k_white.png", title: "4K", class: "style_image")>
-      <%= link_to "Arat Killo", root_path, id: "logo" %></a>
+      <%= link_to "4K", root_path, id: "logo" %></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>        
-           <li><%= link_to "My Shop", static_pages_myshop_path %></li>
-            <li><%= link_to "New Shop", new_shop_path %></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
+        <% if user_signed_in? %>      
+          <% if current_user.admin? %>
+            <li><%= link_to "Categories", categories_path %></li>
+          <% end %>
+          <li><%= link_to "My Shop", static_pages_myshop_path %></li>
+          <li><%= link_to "New Shop", new_shop_path %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
         <% else %>
           <li><%= link_to "Log In", new_user_session_path %> </li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>

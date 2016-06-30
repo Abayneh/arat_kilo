@@ -10,6 +10,8 @@
       <%= link_to "Delete", shop_path(@shop), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
       <%= link_to "Add Item", new_shop_item_path(@shop), class: "btn btn-default"%>
     <% end %>
-    <%= link_to "Items", shop_items_path(@shop), class: "btn btn-default"%>
+    <% if @shop.items.present? %>
+      <%= link_to "Items", shop_items_path(@shop), class: "btn btn-default"%>
+    <% end %>
   </div>
 </div>

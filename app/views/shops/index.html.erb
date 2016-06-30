@@ -1,9 +1,12 @@
 <% @shops.each do |shop| %>
   <div class="col-md-10 col-md-offset-1">
     <div class="message">
-    <h2 class="message-title">
-      <%= link_to  shop.name, shop, class: "btn-custom" %>
-    </h2>
+      <h2 class="message-title">
+        <%= link_to  shop.name, shop, class: "btn-custom" %>
+        <% if current_user.admin? %> |
+          <%= link_to "delete", shop, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </h2>
     </div>
   </div>
 <% end %>

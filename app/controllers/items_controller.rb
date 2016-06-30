@@ -1,33 +1,41 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_item, only: [:edit, :update, :destroy]
   before_action :find_shop, only: [:index, :new, :show, :create]
   
   def index
-    # @item = Item.find(params[:id])
-    @items = Item.all
+    @myitems = @shop.items.all
   end
   
   def new
-    @item = @shop.items.build
+    @categories = Category.all.map {|c| [c.name, c.id]}
+    @item = @shop.items.new
   end
   
   def show
+    @item = Item.find(params[:id]) #item id
+    @category = Category.find(@item.category_id)
   end
   
   def create
-    @item = @shop.items.build(item_params)
+    @item = @shop.items.new(item_params)
+    @item.category_id = params[:category_id]
+
     if @item.save
+      flash[:info] = "Item added Successfully"
       redirect_to shop_items_path
     else
+      flash[:warning] = "Unable to add item, please try again"
       render 'new'
     end
   end
   
   def edit
+    @categories = Category.all.map {|c| [c.name, c.id]} #???
   end
   
   def update
+    @item.category_id = params[:category_id]
     if @item.update(item_params)
       redirect_to shop_items_path
     else
@@ -43,7 +51,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :category, :price, :discount, :soldout)
+    params.require(:item).permit(:name, :price, :discount, :soldout, :category_id)
   end
   
   def find_item

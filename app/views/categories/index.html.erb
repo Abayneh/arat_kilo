@@ -1,0 +1,14 @@
+<% @categories.each do |category| %>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="message">
+      <h2 class="message-title">
+        <%= link_to  category.name, "#", class: "btn-custom" %> |
+        <%= link_to "delete", category, method: :delete, data: { confirm: "Are you sure?" } %>
+      </h2>
+    </div>
+  </div>
+<% end %>
+
+<div class="col-md-10 col-md-offset-1">
+  <%= link_to  "Add Category", new_category_path, class: "btn btn-default" %>
+</div >

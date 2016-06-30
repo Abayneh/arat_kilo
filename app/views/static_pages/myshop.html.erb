@@ -1,11 +1,20 @@
-<% @shops.each do |shop| %>
-  <% if current_user.id == shop.user_id %>
-    <div class="col-md-10 col-md-offset-1">
-      <div class="message">
+
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+    <h2>You have <%= pluralize(@myshop.count, "shop") %> </h2>
+  </div>
+</div>
+<div class="col-md-8 col-md-offset-2">
+<% @myshop.each do |shop| %>
+    <div class="message">
       <h2 class="message-title">
         <%= link_to  shop.name, shop, class: "btn-custom" %>
       </h2>
-      </div>
     </div>
   <% end %>
-<% end %>
+</div>
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+    <%= link_to  "Add Shop", new_shop_path, class: "btn btn-default" %>
+  </div>
+</div>

@@ -1,14 +1,27 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+    delete "/logout" => "devise/sessions#destroy"
+  end
   resources :messages do
     resources :comments
   end
+  
   resources :shops do
     resources :items
   end
   
+  resources :item do
+    resources :categories
+    get 'categories/show'
+  end
+
   get  '/static_pages/myshop'
+  
+  # get 'categories/new'
   root 'shops#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
