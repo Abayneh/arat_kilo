@@ -10,14 +10,17 @@ Rails.application.routes.draw do
     resources :comments
   end
   
+  # resources :items
   resources :shops do
     resources :items
   end
   
   resources :item do
     resources :categories
-    get 'categories/show'
+    # get 'categories/show'
   end
+  
+  resources :categories
 
   get  '/static_pages/myshop'
   

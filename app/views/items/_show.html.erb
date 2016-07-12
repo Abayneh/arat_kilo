@@ -1,0 +1,5 @@
+  <p class="message-desc">Category: <%= item.name %></p>
+  <p class="message-desc">Price: <%= item.price %></p>
+  <p class="message-desc">Discount:<%= human_boolean(item.discount) %></p>
+  <p class="message-desc">Sold out: <%= human_boolean(item.soldout) %></p>
+  <p class="message-posted-by"><%= time_ago_in_words(item.created_at) %> ago by <%= @shop.name %></p>

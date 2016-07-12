@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'carrierwave',             '0.10.0'
-gem 'mini_magick',             '3.8.0'
-gem 'fog',                     '1.36.0'
+gem 'carrierwave',             '0.11.2'
+gem 'mini_magick',             '4.5.1'
+gem 'fog',                     '1.38.0'
 
 gem 'faker',          '1.4.2'
 
@@ -17,6 +17,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 3.1.0'
 # Boot starap sass
 gem 'bootstrap-sass', '~> 3.3.4.1'
+# For pagination
+gem 'will_paginate',           '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
+
 # Use Uglifier as compressor for JavaScript assets
 # Devise gem
 gem 'devise', '~> 3.4.1'

@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :find_shop, only: [:index, :new, :show, :create]
   
   def index
-    @myitems = @shop.items.all
+    @myitems = @shop.items.paginate(page: params[:page], :per_page => 2)
   end
   
   def new
@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name, :price, :discount, :soldout, :category_id)
+    params.require(:item).permit(:name, :price, :discount, :soldout, :category_id, :picture)
   end
   
   def find_item

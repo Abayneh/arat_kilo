@@ -6,13 +6,19 @@
 
 <div class="col-md-8 col-md-offset-2">
   <div class="message-show">
-      <p class="message-desc">Category: <%= @category.name %></p>
-      <p class="message-desc">Price: <%= @item.price %></p>
-      <p class="message-desc">Discount:<%= human_boolean(@item.discount) %></p>
-      <p class="message-desc">Sold out: <%= human_boolean(@item.soldout) %></p>
-      <p class="message-posted-by"><%= time_ago_in_words(@item.created_at) %> ago by <%= @shop.name %></p>
+    <p class="message-desc">Category: <%= @category.name %></p>
+    <p class="message-desc">Price: <%= @item.price %></p>
+    <p class="message-desc">Discount:<%= human_boolean(@item.discount) %></p>
+    <p class="message-desc">Sold out: <%= human_boolean(@item.soldout) %></p>
+    <p class="message-posted-by"><%= time_ago_in_words(@item.created_at) %> ago by <%= @shop.name %></p>
+
+  <div class="col-md4">
+    <%= image_tag(@item.picture.url) if @item.picture? %>
+  </div>
+      
   </div>
 </div>
+
 <% if current_user.id == @shop.user_id %>
   <div class="col-md-8 col-md-offset-2">
     <div class="message-show">
@@ -22,4 +28,5 @@
       <%= link_to "Back", shop_items_path, class: "btn btn-default" %>
     </div>
   </div>
+  
 <% end %>

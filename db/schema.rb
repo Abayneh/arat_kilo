@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628211318) do
+ActiveRecord::Schema.define(version: 20160630035225) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -37,9 +37,9 @@ ActiveRecord::Schema.define(version: 20160628211318) do
     t.boolean  "soldout"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "picture"
     t.integer  "shop_id"
     t.integer  "category_id"
+    t.string   "picture"
   end
 
   create_table "messages", force: :cascade do |t|

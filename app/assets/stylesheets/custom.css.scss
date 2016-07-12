@@ -81,11 +81,15 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
   background-color: #FFF;
   border-radius: 0px;
-  padding: 1.4em 1.4em;
+  padding:10px;
+  margin:5px;
+  // padding: 1.4em 1.4em;
   color: #000;
   margin-bottom: 5px;
   font-family: 'Asap', sans-serif;
   font-weight: 220;
+  box-shadow: 0 1px 2px rgba(30,25,25,0.9);
+
   
   
   h2 {
@@ -200,3 +204,53 @@ th, td {
     text-align: left;
 
 }
+
+/*Image view*/
+.column{
+ width:300px;
+ height:200px;
+ min-height:380px;    
+ padding:5px;    
+ margin:5px;
+ 
+ background:#fff;
+ font-size:14px;
+ 
+ display:inline-block;
+ position:relative;
+ float:left;
+     
+ box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+ -moz-box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+ -webkit-box-shadow: 0 1px 3px rgba(30,25,25,0.9);
+     
+ -webkit-transition: top 1s ease, left 1s ease;
+ -moz-transition: top 1s ease, left 1s ease;
+ -o-transition: top 1s ease, left 1s ease;
+ -ms-transition: top 1s ease, left 1s ease;
+}
+
+/* Item view table*/
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.td {
+    width: 50%;
+    padding-left: 20px;
+    text-align: left;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.td1 {
+    padding-left: 30px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+
+}
+
+
